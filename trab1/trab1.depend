@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
-1554608066 source:d:\ufrgs\projeto de ia\p-ia\trab1\main.cpp
+1554762780 source:d:\ufrgs\projeto de ia\p-ia\trab1\main.cpp
 	<iostream>
+	<stdlib.h>
 
