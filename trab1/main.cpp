@@ -5,14 +5,36 @@
 using namespace std;
 static const int MAX = 8;
 
+//Closed set
+map<vector<vector<int> > , bool> closed;
+//State goal
+vector<vector<int> > goal(3,vector<int> (3));
+
+//Define state
+typedef pair<vector<vector<int> > , int> state;
+
+
+//Algorithms
+void BFS(vector<vector<int> initial_form) {
+}
+
+void IDFS(vector<vector<int> initial_form) {
+}
+
+void ASTAR(vector<vector<int> initial_form) {
+}
+
+void IDASTAR(vector<vector<int> initial_form) {
+}
+
+void GBFS(vector<vector<int> initial_form) {
+}
 
 int main(int argc, char** argv)
 {
-    int lista[MAX];
-    int linha = 0;
+    vector<vector<int> initial_form(3,vector<int> (3));
 
-    //State goal
-    vector<vector<int> > goal(3,vector<int> (3));
+    //Set goal state
     goal[0][0] = 1;
     goal[0][1] = 2;
     goal[0][2] = 3;
@@ -24,12 +46,11 @@ int main(int argc, char** argv)
     goal[2][2] = 0;
     //
 
-    cout << "You have entered " << argc
-     << " arguments:" << "\n";
-    for (int i = 2; i <= MAX + 2; ++i){
+
+    //Reading args
+    for (int i = 0; i < argc - 2; ++i){
+        initial_form[i/3][i%3] = atoi(argv[i+2]);
         cout << argv[i] << "\n";
-        lista[i - 2] = atoi(argv[i]);
-        string a = argv[i];
     }
     cout << atoi(argv[4]) << "\n";
     cout << lista[8] << " Aqui\n";
@@ -38,14 +59,19 @@ int main(int argc, char** argv)
     //Reading what algorithm is
     if(argv[1] == string("-bfs")){
     cout << "Algorithm BFS\n";
+    BFS(initial_form);
     }else if(argv[1] == string("-idfs")){
     cout << "Algorithm IDFS\n";
+    IDFS(initial_form);
     }else if(argv[1] == string("-astar")){
     cout << "Algorithm ASTAR\n";
+    ASTAR(initial_form);
     }else if(argv[1] == string("-idastar")){
     cout << "Algorithm IDASTAR\n";
+    IDASTAR(initial_form);
     }else if(argv[1] == string("-gbfs")){
     cout << "Algorithm GBFS\n";
+    GBFS(initial_form);
     }
     //
     return 0;
